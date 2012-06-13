@@ -131,18 +131,17 @@ int main(int argc, char **argv)
         }
 
         //Update Status
-        if(JAUS::Time::GetUtcTimeMs() - printTimeMs > 5000)                                         
-        {                                                                                          
-            // Print status of services.                                                           
-            std::cout << "\n=======================Basic Service Status============================\n";             
-            component.AccessControlService()->PrintStatus(); std::cout << std::endl;               
-            component.ManagementService()->PrintStatus(); std::cout << std::endl;                  
-            //globalPoseSensor->PrintStatus(); std::cout << std::endl;                               
-            local_pose_sensor->PrintStatus(); std::cout << std::endl;                                
-            velocity_state_sensor->PrintStatus(); std::cout << std::endl;                            
-            localWaypointListDriver->PrintStatus();                                                
-            printTimeMs = JAUS::Time::GetUtcTimeMs();                                              
-        }                                                                                          
+        if(JAUS::Time::GetUtcTimeMs() - printTimeMs > 5000)
+        {
+            // Print status of services.
+            std::cout << "\n=======================Basic Service Status============================\n";
+            component.AccessControlService()->PrintStatus(); std::cout << std::endl;
+            component.ManagementService()->PrintStatus(); std::cout << std::endl;
+            local_pose_sensor->PrintStatus(); std::cout << std::endl;
+            velocity_state_sensor->PrintStatus(); std::cout << std::endl;
+            localWaypointListDriver->PrintStatus();
+            printTimeMs = JAUS::Time::GetUtcTimeMs();
+        }
 
         CxUtils::SleepMs(250);
         ros::spinOnce();
