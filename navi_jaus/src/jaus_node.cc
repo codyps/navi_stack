@@ -147,9 +147,6 @@ int main(int argc, char **argv)
         CxUtils::SleepMs(250);
         ros::spinOnce();
     }
-    //END MAIN JAUS LOOP---------------------------------------------------------------------------//
-    // Shutdown any components associated with our subsystem.                                  
-    component.Shutdown();                                                   
 
     return 0;
 }
